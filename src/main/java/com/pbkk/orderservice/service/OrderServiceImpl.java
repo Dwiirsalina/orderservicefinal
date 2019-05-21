@@ -36,7 +36,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public Order getOrder(Long orderId) {
+	public Order getOrder(Integer orderId) {
 		return orderRepository.findById(orderId)
 				.orElseThrow(() -> new ResourceNotFoundException("Order Id "+ orderId + " not exist"));
 	}
@@ -47,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public Order updateOrderStatus(Long orderId, Integer status) {
+	public Order updateOrderStatus(Integer orderId, Integer status) {
 		Order order = orderRepository.findById(orderId).orElse(null);
 		if(order != null) {
 			order.setOrder_status(status);

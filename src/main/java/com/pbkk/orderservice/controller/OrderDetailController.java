@@ -39,7 +39,7 @@ public class OrderDetailController {
 	@GetMapping("/{id}/details")
 	public List<OrderDetail> getOrderDetails(
 			@RequestHeader("token") String token,
-			@PathVariable(name = "id") Long id){
+			@PathVariable(name = "id") Integer id){
 		return orderDetailService.getOrderDetails(id);
 	}
 	

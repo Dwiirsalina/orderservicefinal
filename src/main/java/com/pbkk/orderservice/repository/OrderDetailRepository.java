@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.pbkk.orderservice.model.OrderDetail;
 
 @Repository
-public interface OrderDetailRepository extends JpaRepository<OrderDetail, Long> {
-	List<OrderDetail> findByOrderId(Long orderId);
-	Optional<OrderDetail> findByIdAndOrderId(Long id, Long orderId); 
+public interface OrderDetailRepository extends JpaRepository<OrderDetail, Integer> {
+	List<OrderDetail> findByOrderId(Integer orderId);
+	Optional<OrderDetail> findByIdAndOrderId(Integer id, Integer orderId); 
 }

@@ -21,7 +21,7 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 	private OrderService orderService;
 	
 	@Override
-	public List<OrderDetail> getOrderDetails(Long orderId) {
+	public List<OrderDetail> getOrderDetails(Integer orderId) {
 		List<OrderDetail> orderDetails = orderDetailRepository.findByOrderId(orderId);
 		if (orderDetails.isEmpty()) {
 			throw new ResourceNotFoundException("Order Id "+orderId+" Not Found!");

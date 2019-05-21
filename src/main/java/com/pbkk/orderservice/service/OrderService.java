@@ -8,8 +8,8 @@ public interface OrderService {
 
 	List<Order> getAllOrders();
 	List<Order> getOrdersByParameter(Integer status, Integer customerId);
-	Order getOrder(Long orderId);
+	Order getOrder(Integer orderId);
 	Order createOrder(Order order);
-	Order updateOrderStatus(Long orderId, Integer status);
+	Order updateOrderStatus(Integer order_id, Integer status);
 //	void recalculateOrderTotalPrice(Long orderId);
 }
