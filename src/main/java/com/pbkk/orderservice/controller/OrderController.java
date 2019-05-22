@@ -38,7 +38,7 @@ public class OrderController {
 	@ResponseBody
 	@GetMapping("")
 	public List<Order> getAllOrder(
-			@RequestHeader("token") String token,
+//			@RequestHeader("token") String token,
 			@RequestParam(name = "order_status", required = false) String order_status,
 			@RequestParam(name = "customer_id", required = false) Integer customer_id
 			){
@@ -67,7 +67,7 @@ public class OrderController {
 	@PostMapping ("/add")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Order createOrder(
-			@RequestHeader("token") String token,
+//			@RequestHeader("token") String token,
 			@Valid @RequestBody Order orderRequest
 			) {
 		Order newOrder = new Order();
@@ -101,7 +101,7 @@ public class OrderController {
 	@ResponseBody
 	@GetMapping("{id}")
 	public Order getOrder(
-			@RequestHeader("token") String token,
+//			@RequestHeader("token") String token,
 			@PathVariable("id") Integer order_id) {
 		return orderService.getOrder(order_id);
 	}
@@ -110,7 +110,7 @@ public class OrderController {
 	@ResponseBody
 	@PatchMapping("/{id}/status")
 	public Order updateOrderStatus(
-			@RequestHeader("token") String token,
+//			@RequestHeader("token") String token,
 			@PathVariable(name = "id") Integer order_id,
 			@RequestParam(name = "status") Integer order_status
 			) {
